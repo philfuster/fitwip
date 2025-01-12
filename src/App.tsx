@@ -1,33 +1,41 @@
-import { useState } from "react";
-import viteLogo from "/vite.svg";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
+import { MyComponent } from "./shared/components";
+
+class Dog {
+	private name: string;
+
+	private age: number;
+
+	constructor(name: string, age: number) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public bark() {
+		console.log(`${this.name} is barking!!`);
+	}
+
+	public barkAge() {
+		console.log(`${this.name} is ${this.age} years old!`);
+	}
+}
+
+const willieNelson = new Dog("willieNelson", 3);
+
+function calculateHelloForDog(dog?: Dog) {
+	const flag = true;
+	if (flag) {
+		console.log(`Hello ${dog != null ? dog.bark() : "doggy"}!`);
+	}
+}
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
 		<>
-			<div>
-				<a href="https://vite.dev" target="_blank" rel="noreferrer">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank" rel="noreferrer">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button type="submit" onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
+			<MyComponent />
+			<p>Hey</p>
+			{calculateHelloForDog(willieNelson)}
+			<MyComponent />
 		</>
 	);
 }
