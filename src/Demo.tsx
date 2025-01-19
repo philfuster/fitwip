@@ -1,10 +1,13 @@
-import { MyComponent } from "./shared/components/MyComponent";
+import { TestComponent } from "./shared/components/TestComponent";
 
 function Demo() {
 	return (
 		<>
 			<h1>Demo Page</h1>
-			<MyComponent />
+			<TestComponent />
+			<div>
+				<h1>Cat Component</h1>
+			</div>
 		</>
 	);
 }
