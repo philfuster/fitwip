@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import "./App.css";
-import { TestComponent } from "./shared/components";
+import { TestComponent } from "../../shared/components";
 import { Global } from "@emotion/react";
 
 const AppContainer = styled("div")({ width: "100%" });
