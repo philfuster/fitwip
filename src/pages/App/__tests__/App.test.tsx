@@ -4,6 +4,9 @@ import App from "../App";
 describe("App", () => {
 	test("should render TestComponent", () => {
 		render(<App />);
-		expect(screen.queryByText("hey")).toBeDefined();
+
+		const element = screen.queryByText("Hey");
+
+		expect(element).toBeInTheDocument();
 	});
 });
