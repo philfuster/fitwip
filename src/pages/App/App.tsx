@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import "./App.css";
 import { TestComponent } from "../../shared/components";
 import { Global } from "@emotion/react";
 
