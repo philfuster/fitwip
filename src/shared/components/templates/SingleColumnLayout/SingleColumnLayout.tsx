@@ -1,4 +1,4 @@
-import styled from "@emotion/styled/macro";
+import styled from "@emotion/styled";
 import { ReactNode } from "react";
 
 interface SingleColumnLayoutProps {
@@ -15,6 +15,12 @@ const StyledSingleColumnLayout = styled.div<SingleColumnLayoutProps>(({ padding,
   padding: padding || "1rem",
   maxWidth: maxWidth || "800px",
   margin: "0 auto",
+  width: "100%", // Ensures it spans the full width of the viewport
+  boxSizing: "border-box", // Includes padding in width calculations
+  "@media (max-width: 600px)": {
+    padding: "0.5rem", // Adjust padding for smaller screens
+    maxWidth: "100%", // Allow full width on smaller screens
+  },
 }));
 
 const SingleColumnLayout = ({
