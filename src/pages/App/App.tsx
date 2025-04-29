@@ -6,30 +6,41 @@ const AppContainer = styled("div")();
 
 // Define global styles outside the component to avoid re-creation on every render
 const globalStyles = css({
-	html: {
+	"*, *:before, *:after": {
 		boxSizing: "border-box",
 	},
-	"*, *:before, *:after": {
-		boxSizing: "inherit",
+	"*": {
+		margin: 0
+	},
+	"@media (prefers-reduced-motion: no-preference)": {
+		"html": {
+			interpolateSize: "allow-keywords",
+		},
 	},
 	body: {
-		margin: 0,
-		lineHeight: "1.2",
-		overflowX: "hidden",
+		lineHeight: "1.5",
 		WebkitFontSmoothing: "antialiased", // Antialiasing
-		MoxOsFontSmoothing: "grayscale", // Antialiasing
+		MozOsFontSmoothing: "grayscale", // Antialiasing
 	},
-	a: {
-		textDecoration: "none",
-	},
-	"a:hover": {
-		textDecoration: "underline",
-	},
-	img: {
+	"img, picture, video, canvas, svg": {
+		display: "block",
 		maxWidth: "100%",
-		height: "auto",
-		width: "auto",
 	},
+	"input, button, textarea, select": {
+		font: "inherit",
+	},
+	"p, h1, h2, h3, h4, h5, h6": {
+		overflowWrap:"break-word"
+	},
+	"p": {
+		textWrap: "pretty"
+	},
+	"h1, h2, h3, h4, h5, h6": {
+		textWrap: "balance"
+	},
+	"#root, #__next": {
+		isolation: "isolate"
+	}
 });
 
 function App() {
